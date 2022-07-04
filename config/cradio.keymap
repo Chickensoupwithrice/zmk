@@ -23,42 +23,13 @@
 
 / { 
 
-    behaviors {
-        lf: left_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                5    6    7    8    9
-                15   16   17   18   19
-                25   26   27   28   29
-                32   33
-            >;
-        };
-
-        rh: right_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <
-                0    1    2    3    4
-                10   11   12   13   14
-                20   21   22   23   24
-                               30   31
-            >;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
+        combo_caps_word {
+            timeout-ms = <100>;
+            key-positions = <20 29>;
+            bindings = <&caps_word>;
+        };
     };
 
     keymap {
@@ -66,7 +37,7 @@
         default_layer {
             bindings = <
                   &kp Q      &kp W       &kp F        &kp P        &kp G         &kp J        &kp L       &kp U           &kp Y        &kp SCLN
-                  &lf LGUI A &lf LALT R  &lf LSHIFT S &lf LCTRL T  &kp D         &kp H        &rh LCTRL N &rh RSHIFT E    &rh LALT I   &rh LGUI O
+                  &mt LGUI A &mt LALT R  &mt LSHIFT S &mt LCTRL T  &kp D         &kp H        &mt LCTRL N &mt RSHIFT E    &mt LALT I   &mt LGUI O
                   &kp Z      &kp X       &kp C        &kp V        &kp B         &kp K        &kp M       &kp CMMA        &kp DOT      &kp FSLH
                                                       &kp TAB    &lt NAV SPC     &lt SYM RET  &lt NUM BSPC
                 >;
@@ -92,7 +63,7 @@
 
        sym_layer {
             bindings = <
-                &caps_word &kp AMPS &kp STAR  &kp LPAR  &kp ESC               &trans    &trans        &trans &trans    &trans
+                &trans     &kp AMPS &kp STAR  &kp LPAR  &kp ESC               &trans    &trans        &trans &trans    &trans
                 &kp DQT    &kp DLLR &kp PRCNT &kp CARET &kp KP_PLUS           &trans    &trans        &trans &trans    &trans
                 &kp TILDE  &kp EXCL &kp AT    &kp HASH  &kp PIPE              &reset    &bootloader   &trans &trans    &trans
                                              &kp RPAR  &kp UNDER             &trans    &trans
