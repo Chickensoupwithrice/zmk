@@ -14,6 +14,7 @@
 #define NAV 1
 #define NUM 2
 #define SYM 3
+#define FUN 4
 
 
 &mt {
@@ -39,7 +40,7 @@
                   &kp Q      &kp W       &kp F        &kp P        &kp G         &kp J        &kp L       &kp U           &kp Y        &kp SCLN
                   &mt LGUI A &mt LALT R  &mt LSHIFT S &mt LCTRL T  &kp D         &kp H        &mt LCTRL N &mt RSHIFT E    &mt LALT I   &mt LGUI O
                   &kp Z      &kp X       &kp C        &kp V        &kp B         &kp K        &kp M       &kp CMMA        &kp DOT      &kp FSLH
-                                                      &kp TAB    &lt NAV SPC     &lt SYM RET  &lt NUM BSPC
+                                                      &lt FUN TAB  &lt NAV SPC   &lt SYM RET  &lt NUM BSPC
                 >;
         };
 
@@ -54,19 +55,28 @@
 
         num_layer {
             bindings = <
-                &trans     &kp N7 &kp N8 &kp N9 &kp ESC               &trans    &trans   &trans &trans    &trans
-                &kp SQT    &kp N4 &kp N5 &kp N6 &kp KP_EQUAL          &trans    &trans   &trans &trans    &trans
-                &kp GRAVE  &kp N1 &kp N2 &kp N3 &kp BSLH              &trans    &trans   &trans &trans    &trans
+                &trans     &kp N9 &kp N8 &kp N7 &kp ESC               &trans    &trans   &trans &trans    &trans
+                &kp SQT    &kp N6 &kp N5 &kp N4 &kp KP_EQUAL          &trans    &trans   &trans &trans    &trans
+                &kp GRAVE  &kp N3 &kp N2 &kp N1 &kp BSLH              &trans    &trans   &trans &trans    &trans
                                          &kp N0 &kp KP_MINUS          &trans    &trans
                 >;
        };
 
        sym_layer {
             bindings = <
-                &trans     &kp AMPS &kp STAR  &kp LPAR  &kp ESC               &trans    &trans        &trans &trans    &trans
-                &kp DQT    &kp DLLR &kp PRCNT &kp CARET &kp KP_PLUS           &trans    &trans        &trans &trans    &trans
-                &kp TILDE  &kp EXCL &kp AT    &kp HASH  &kp PIPE              &reset    &bootloader   &trans &trans    &trans
-                                             &kp RPAR  &kp UNDER             &trans    &trans
+                &trans    &kp LPAR  &kp STAR  &kp AMPS  &kp ESC               &trans    &trans        &trans &trans    &trans
+                &kp DQT   &kp CARET &kp PRCNT &kp DLLR  &kp KP_PLUS           &trans    &trans        &trans &trans    &trans
+                &kp TILDE &kp HASH  &kp AT    &kp EXCL  &kp PIPE              &reset    &bootloader   &trans &trans    &trans
+                                              &kp RPAR  &kp UNDER             &trans    &trans
+                >;
+        };
+
+       fun_layer {
+            bindings = <
+                &trans &trans &trans &trans &trans        &trans &kp F7    &kp F8    &kp F9    &trans
+                &trans &trans &trans &trans &trans        &trans &kp F4    &kp F5    &kp F6    &trans
+                &trans &trans &trans &trans &trans        &trans &kp F1    &kp F2    &kp F3    &trans
+                                     &trans &trans        &trans &kp F10
                 >;
         };
     };
