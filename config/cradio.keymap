@@ -37,9 +37,9 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                  &mt Q ESC       &kp W       &kp F        &kp P        &kp G                          &kp J                     &kp L       &kp U           &kp Y        &kp SCLN
+                  &kp ESC         &kp W       &kp F        &kp P        &kp G                          &kp J                     &kp L       &kp U           &kp Y        &kp SCLN
                   &mt LGUI A      &mt LALT R  &mt LSHIFT S &mt LCTRL T  &mt LG(LA(LS(LCTRL))) D        &mt LG(LA(LS(LCTRL))) H   &mt LCTRL N &mt RSHIFT E    &mt LALT I   &mt LGUI O
-                  &mt Z MINUS     &kp X       &kp C        &kp V        &kp B                          &kp K                     &kp M       &kp CMMA        &kp DOT      &kp FSLH
+                  &kp Z           &kp X       &kp C        &kp V        &kp B                          &kp K                     &kp M       &kp CMMA        &kp DOT      &kp FSLH
                                                           &lt FUN TAB  &lt NAV SPC                    &lt SYM RET  &lt NUM BSPC
                 >;
         };
@@ -55,7 +55,7 @@
 
         num_layer {
             bindings = <
-                &trans     &trans &trans &trans &trans                &trans    &trans   &trans &trans    &trans
+                &kp Q      &kp Z  &trans &trans &trans                &trans    &trans   &trans &trans    &trans
                 &kp SQT    &trans &trans &trans &kp KP_EQUAL          &trans    &trans   &trans &trans    &trans
                 &kp GRAVE  &trans &trans &trans &kp BSLH              &trans    &trans   &trans &trans    &trans
                                          &trans &trans                &trans    &trans
@@ -64,7 +64,7 @@
 
        sym_layer {
             bindings = <
-                &trans    &kp LPAR  &kp STAR  &kp AMPS  &trans                &reset    &bootloader   &trans &trans    &trans
+                &kp LS(Q) &kp LS(Z) &kp STAR  &kp AMPS  &trans                &reset    &bootloader   &trans &trans    &trans
                 &kp DQT   &kp CARET &kp PRCNT &kp DLLR  &kp KP_PLUS           &trans    &trans        &trans &trans    &trans
                 &kp TILDE &kp HASH  &kp AT    &kp EXCL  &kp PIPE              &trans    &trans        &trans &trans    &trans
                                               &kp RPAR  &kp UNDER             &trans    &trans
