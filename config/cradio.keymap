@@ -30,7 +30,7 @@
             label = "MINUS_UNDER";
             #binding-cells = <0>;
             bindings = <&kp UNDER>, <&kp MINUS>;
-            mods = <MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
        };
     };
 
