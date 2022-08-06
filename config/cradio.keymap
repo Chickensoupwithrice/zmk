@@ -25,7 +25,7 @@
 / { 
 
     behaviors {
-        minunder: minus-under {
+        minunder: minus_under {
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_UNDER";
             #binding-cells = <0>;
