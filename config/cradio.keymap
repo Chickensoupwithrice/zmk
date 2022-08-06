@@ -41,13 +41,28 @@
             key-positions = <20 29>;
             bindings = <&caps_word>;
         };
+        combo_esc {
+            timeout-ms = <100>;
+            key-positions = <10 19>;
+            bindings = <&kp ESC>;
+        };
+        combo_minus {
+            timeout-ms = <100>;
+            key-positions = <6 7>;
+            bindings = <&kp MINUS>;
+        };
+        combo_under {
+            timeout-ms = <100>;
+            key-positions = <26 27>;
+            bindings = <&kp UNDER>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                  &kp ESC    &kp W       &kp F        &kp P        &kp G                          &minunder                 &kp L       &kp U           &kp Y        &kp SCLN
+                  &kp Q      &kp W       &kp F        &kp P        &kp G                          &kp J                     &kp L       &kp U           &kp Y        &kp SCLN
                   &mt LGUI A &mt LALT R  &mt LSHIFT S &mt LCTRL T  &mt LG(LA(LS(LCTRL))) D        &mt LG(LA(LS(LCTRL))) H   &mt LCTRL N &mt RSHIFT E    &mt LALT I   &mt LGUI O
                   &kp Z      &kp X       &kp C        &kp V        &kp B                          &kp K                     &kp M       &kp CMMA        &kp DOT      &kp FSLH
                                                       &lt FUN TAB  &lt NAV SPC                    &lt SYM RET  &lt NUM BSPC
@@ -59,16 +74,16 @@
                 &bt BT_CLR   &trans &trans &bootloader &reset               &trans      &kp LBRC   &kp RBRC &kp LPAR    &kp RPAR
                 &bt BT_SEL 0 &trans &trans &trans      &trans               &kp LEFT    &kp DOWN   &kp UP   &kp RIGHT   &trans
                 &bt BT_SEL 1 &trans &trans &trans      &trans               &trans      &kp LBKT   &kp RBKT &trans      &trans
-                                           &trans      &trans               &kp ESC     &trans
+                                           &trans      &trans               &trans      &trans
                 >;
         };
 
         num_layer {
             bindings = <
-                &kp Q      &kp Z  &trans &trans &trans                &trans    &trans   &trans &trans    &trans
+                &trans     &trans &trans &trans &trans                &trans    &trans   &trans &trans    &trans
                 &kp SQT    &trans &trans &trans &kp KP_EQUAL          &trans    &trans   &trans &trans    &trans
                 &kp GRAVE  &trans &trans &trans &kp BSLH              &trans    &trans   &trans &trans    &trans
-                                         &trans &kp J                 &trans    &trans
+                                         &trans &trans                &trans    &trans
                 >;
        };
 
