@@ -32,22 +32,22 @@
             bindings = <&caps_word>;
         };
         combo_tab {
-            timeout-ms = <80>;
+            timeout-ms = <30>;
             key-positions = <23 24>;
             bindings = <&lt FUN TAB>;
         };
         combo_spc {
-            timeout-ms = <80>;
+            timeout-ms = <30>;
             key-positions = <13 14>;
             bindings = <&lt NAV SPC>;
         };
         combo_ret {
-            timeout-ms = <80>;
+            timeout-ms = <30>;
             key-positions = <15 16>;
             bindings = <&lt SYM RET>;
         };
         combo_bspc {
-            timeout-ms = <80>;
+            timeout-ms = <30>;
             key-positions = <25 26>;
             bindings = <&lt NUM BSPC>;
         };
