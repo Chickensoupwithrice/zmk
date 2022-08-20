@@ -24,16 +24,6 @@
 
 / { 
 
-    behaviors {
-        minunder: minus_under {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINUS_UNDER";
-            #binding-cells = <0>;
-            bindings = <&kp UNDER>, <&kp MINUS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-       };
-    };
-
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
@@ -43,22 +33,22 @@
         };
         combo_tab {
             timeout-ms = <80>;
-            key-positions = <21 22 23>;
+            key-positions = <23 24>;
             bindings = <&lt FUN TAB>;
         };
         combo_spc {
             timeout-ms = <80>;
-            key-positions = <11 12 13>;
+            key-positions = <13 14>;
             bindings = <&lt NAV SPC>;
         };
         combo_ret {
             timeout-ms = <80>;
-            key-positions = <16 17 18>;
+            key-positions = <15 16>;
             bindings = <&lt SYM RET>;
         };
         combo_bspc {
             timeout-ms = <80>;
-            key-positions = <26 27 28>;
+            key-positions = <25 26>;
             bindings = <&lt NUM BSPC>;
         };
         combo_esc {
@@ -67,13 +57,13 @@
             bindings = <&kp ESC>;
         };
         combo_minus {
-            timeout-ms = <20>;
-            key-positions = <6 7>;
+            timeout-ms = <30>;
+            key-positions = <3 6>;
             bindings = <&kp MINUS>;
         };
         combo_under {
-            timeout-ms = <20>;
-            key-positions = <26 27>;
+            timeout-ms = <30>;
+            key-positions = <23 26>;
             bindings = <&kp UNDER>;
         };
     };
@@ -85,7 +75,7 @@
                   &kp Q      &kp W       &kp F        &kp P        &kp G                          &kp J                     &kp L       &kp U           &kp Y        &kp SCLN
                   &mt LGUI A &mt LALT R  &mt LSHIFT S &mt LCTRL T  &mt LG(LA(LS(LCTRL))) D        &mt LG(LA(LS(LCTRL))) H   &mt LCTRL N &mt RSHIFT E    &mt LALT I   &mt LGUI O
                   &kp Z      &kp X       &kp C        &kp V        &kp B                          &kp K                     &kp M       &kp CMMA        &kp DOT      &kp FSLH
-                                                      &lt FUN TAB  &lt NAV SPC                    &lt SYM RET  &lt NUM BSPC
+                                                      &trans       &trans                         &trans  &trans
                 >;
         };
 
