@@ -57,12 +57,12 @@
             bindings = <&kp ESC>;
         };
         combo_minus {
-            timeout-ms = <30>;
+            timeout-ms = <80>;
             key-positions = <3 6>;
             bindings = <&kp MINUS>;
         };
         combo_under {
-            timeout-ms = <30>;
+            timeout-ms = <80>;
             key-positions = <23 26>;
             bindings = <&kp UNDER>;
         };
