@@ -46,6 +46,11 @@
             key-positions = <23 26>;
             bindings = <&kp UNDER>;
         };
+        combo_ble {
+            timeout-ms = <20>;
+            key-positions = <0 1>;
+            bindings = <&out OUT_BLE>;
+        };
     };
 
     keymap {
