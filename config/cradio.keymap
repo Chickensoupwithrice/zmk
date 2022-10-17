@@ -17,6 +17,9 @@
 #define SYM 3
 #define FUN 4
 
+/* krita base */
+#define KRB 5
+
 
 &mt {
   flavor = "tap-preferred";
@@ -51,6 +54,11 @@
             timeout-ms = <20>;
             key-positions = <0 1>;
             bindings = <&out OUT_BLE>;
+        };
+        combo_krita {
+            timeout-ms = <100>;
+            key-positions = <0 10 20>;
+            bindings = <&tog KRB>;
         };
     };
 
@@ -100,5 +108,14 @@
                                      &trans &trans        &trans &kp N0
                 >;
         };
+
+        krita_base_layer {
+            bindings = <
+                &kp M      &trans &kp BSLH  &kp LBKT     &kp RBKT       &trans    &trans   &trans &trans    &trans
+                &trans     &trans &kp F     &kp I        &kp O          &trans    &trans   &trans &trans    &trans
+                &kp LC(S)  &trans &kp P     &kp K        &kp L          &trans    &trans   &trans &trans    &trans
+                                            &kp LS(LC(Z) &kp LC(Z)      &trans    &trans
+                >;
+       };
     };
 };
