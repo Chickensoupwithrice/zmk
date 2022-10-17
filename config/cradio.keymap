@@ -111,10 +111,10 @@
 
         krita_base_layer {
             bindings = <
-                &kp M      &trans &kp BSLH  &kp LBKT     &kp RBKT       &trans    &trans   &trans &trans    &trans
-                &trans     &trans &kp F     &kp I        &kp O          &trans    &trans   &trans &trans    &trans
-                &kp LC(S)  &trans &kp P     &kp K        &kp L          &trans    &trans   &trans &trans    &trans
-                                            &kp LS(LC(Z) &kp LC(Z)      &trans    &trans
+                &kp M      &trans &kp BSLH  &kp LBKT      &kp RBKT       &trans    &trans   &trans &trans    &trans
+                &trans     &trans &kp F     &kp I         &kp O          &trans    &trans   &trans &trans    &trans
+                &kp LC(S)  &trans &kp P     &kp K         &kp L          &trans    &trans   &trans &trans    &trans
+                                            &kp LS(LC(Z)) &kp LC(Z)      &trans    &trans
                 >;
        };
     };
