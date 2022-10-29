@@ -20,6 +20,9 @@
 /* krita base */
 #define KRB 5
 
+/* play */
+#define PLAY 6
+
 
 &mt {
   flavor = "tap-preferred";
@@ -59,6 +62,11 @@
             timeout-ms = <100>;
             key-positions = <0 10 20>;
             bindings = <&tog KRB>;
+        };
+        combo_play {
+            timeout-ms = <100>;
+            key-positions = <9 19 29>;
+            bindings = <&tog PLAY>;
         };
     };
 
@@ -115,6 +123,15 @@
                 &trans     &trans &kp F     &kp I         &kp O          &trans    &trans   &trans &trans    &trans
                 &kp LC(S)  &trans &kp P     &kp K         &kp L          &trans    &trans   &trans &trans    &trans
                                             &kp LS(LC(Z)) &kp LC(Z)      &trans    &trans
+                >;
+       };
+
+        play {
+            bindings = <
+                &kp Q  &kp W  &kp E     &kp R   &kp T          &kp Y     &kp U    &kp I    &kp O     &kp P
+                &kp A  &kp S  &kp D     &kp F   &kp G          &kp H     &kp J    &kp UP   &kp K     &kp L
+                &kp Z  &kp X  &kp C     &kp V   &kp B          &kp M     &kp LEFT &kp DOWN &kp RIGHT &trans
+                                        &kp TAB &kp SPC        &kp RET   &kp BSPC
                 >;
        };
     };
