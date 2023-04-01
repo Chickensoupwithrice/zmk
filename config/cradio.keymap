@@ -39,8 +39,8 @@
             bindings = <&caps_word>;
         };
         combo_esc {
-            timeout-ms = <80>;
-            key-positions = <10 19>;
+            timeout-ms = <100>;
+            key-positions = <12 13 16 17>;
             bindings = <&kp ESC>;
         };
         combo_minus {
