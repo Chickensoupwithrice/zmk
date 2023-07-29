@@ -83,7 +83,7 @@
 
         nav_layer {
             bindings = <
-                &bt BT_CLR   &trans &trans &bootloader &reset               &trans      &kp LBRC   &kp RBRC &kp LPAR    &kp RPAR
+                &bt BT_CLR   &trans &trans &bootloader &sys_reset           &trans      &kp LBRC   &kp RBRC &kp LPAR    &kp RPAR
                 &bt BT_SEL 0 &trans &trans &trans      &trans               &kp LEFT    &kp DOWN   &kp UP   &kp RIGHT   &trans
                 &bt BT_SEL 1 &trans &trans &trans      &trans               &trans      &kp LBKT   &kp RBKT &trans      &trans
                                            &trans      &trans               &trans      &trans
@@ -101,10 +101,10 @@
 
        sym_layer {
             bindings = <
-                &kp LS(Q) &kp LS(Z) &kp STAR  &kp AMPS  &trans                &reset    &bootloader   &trans &trans    &trans
-                &kp DQT   &kp CARET &kp PRCNT &kp DLLR  &kp KP_PLUS           &trans    &trans        &trans &trans    &trans
-                &kp TILDE &kp HASH  &kp AT    &kp EXCL  &kp PIPE              &trans    &trans        &trans &trans    &trans
-                                              &kp LPAR  &kp RPAR              &trans    &trans
+                &kp LS(Q) &kp LS(Z) &kp STAR  &kp AMPS  &trans                &sys_reset &bootloader   &trans &trans    &trans
+                &kp DQT   &kp CARET &kp PRCNT &kp DLLR  &kp KP_PLUS           &trans     &trans        &trans &trans    &trans
+                &kp TILDE &kp HASH  &kp AT    &kp EXCL  &kp PIPE              &trans     &trans        &trans &trans    &trans
+                                              &kp LPAR  &kp RPAR              &trans     &trans
                 >;
         };
 
@@ -136,4 +136,3 @@
        };
     };
 };
-
