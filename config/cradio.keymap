@@ -39,7 +39,7 @@
             bindings = <&caps_word>;
         };
         combo_esc {
-            timeout-ms = <100>;
+            timeout-ms = <150>;
             key-positions = <12 13 16 17>;
             bindings = <&kp ESC>;
         };
@@ -92,9 +92,9 @@
 
         num_layer {
             bindings = <
-                &trans     &trans &trans &trans &trans                &trans    &trans   &trans &trans    &trans
-                &kp SQT    &trans &trans &trans &kp EQUAL             &trans    &trans   &trans &trans    &trans
-                &kp GRAVE  &trans &trans &trans &kp BSLH              &trans    &trans   &trans &trans    &trans
+                &trans     &kp F7 &kp F8 &kp F9 &trans                &trans    &trans   &trans &trans    &trans
+                &kp SQT    &kp F4 &kp F5 &kp F6 &kp EQUAL             &trans    &trans   &trans &trans    &trans
+                &kp GRAVE  &kp F1 &kp F2 &kp F3 &kp BSLH              &trans    &trans   &trans &trans    &trans
                                          &trans &trans                &trans    &trans
                 >;
        };
