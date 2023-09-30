@@ -63,9 +63,9 @@
 
 /* left-hand HRMs */
 ZMK_BEHAVIOR(ml, hold_tap,
-        flavor = "balanced";
+        flavor = "hold-preferred";
         tapping-term-ms = <280>;
-        quick-tap-ms = <175>;                // repeat on tap-into-hold
+        quick-tap-ms = <175>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_R THUMBS>;
         hold-trigger-on-release;             // delay positional check until key-release
@@ -74,9 +74,9 @@ ZMK_BEHAVIOR(ml, hold_tap,
 
 /* right-hand HRMs */
 ZMK_BEHAVIOR(mr, hold_tap,
-        flavor = "balanced";
+        flavor = "hold-preferred";
         tapping-term-ms = <280>;
-        quick-tap-ms = <175>;
+        quick-tap-ms = <100>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_L THUMBS>;
         hold-trigger-on-release;             // delay positional check until key-release
@@ -97,6 +97,48 @@ ZMK_BEHAVIOR(mr, hold_tap,
             key-positions = <12 13 16 17>;
             bindings = <&kp ESC>;
         };
+
+        // (
+        combo_lpar {
+            timeout-ms = <100>;
+            key-positions = <14 24>;
+            bindings = <&kp LPAR>;
+        };
+
+        // )
+        combo_rpar {
+            timeout-ms = <100>;
+            key-positions = <15 25>;
+            bindings = <&kp RPAR>;
+        };
+
+        // [
+        combo_lbrac {
+            timeout-ms = <100>;
+            key-positions = <13 23>;
+            bindings = <&kp LBRC>;
+        };
+        // ]
+        combo_rbrac {
+            timeout-ms = <100>;
+            key-positions = <16 26>;
+            bindings = <&kp RBRC>;
+        };
+
+        // <
+        combo_less_than {
+            timeout-ms = <100>;
+            key-positions = <3 13>;
+            bindings = <&kp LT>;
+        };
+
+        // >
+        combo_greater_than {
+            timeout-ms = <100>;
+            key-positions = <6 16>;
+            bindings = <&kp GT>;
+        };
+
         combo_minus {
             timeout-ms = <100>;
             key-positions = <2 3 6 7>;
@@ -131,7 +173,7 @@ ZMK_BEHAVIOR(mr, hold_tap,
                   &kp Q      &kp W       &kp F        &kp P        &kp G                          &kp J                     &kp L       &kp U           &kp Y        &kp SCLN
                   &ml LGUI A &ml LALT R  &ml LSHIFT S &ml LCTRL T  &ml LG(LA(LS(LCTRL))) D        &mr LG(LA(LS(LCTRL))) H   &mr LCTRL N &mr RSHIFT E    &mr LALT I   &mr LGUI O
                   &kp Z      &kp X       &kp C        &kp V        &kp B                          &kp K                     &kp M       &kp CMMA        &kp DOT      &kp FSLH
-                                                      &lt FUN TAB  &lt NAV SPC                    &lt SYM RET               &lt NUM BSPC
+                                                      &lt FUN TAB  &lt NAV SPC                    &lt SYM RET               &lt NUM LSHIFT
                 >;
         };
 
@@ -140,7 +182,7 @@ ZMK_BEHAVIOR(mr, hold_tap,
                 &bt BT_CLR   &trans &trans &bootloader &sys_reset           &trans      &kp LBRC   &kp RBRC &kp LPAR    &kp RPAR
                 &bt BT_SEL 0 &trans &trans &trans      &trans               &kp LEFT    &kp DOWN   &kp UP   &kp RIGHT   &trans
                 &bt BT_SEL 1 &trans &trans &trans      &trans               &trans      &kp LBKT   &kp RBKT &trans      &trans
-                                           &trans      &trans               &trans      &trans
+                                           &trans      &trans               &trans      &kp BSPC
                 >;
         };
 
@@ -164,10 +206,10 @@ ZMK_BEHAVIOR(mr, hold_tap,
 
        fun_layer {
             bindings = <
-                &trans &trans &trans &trans &trans        &trans &kp N7    &kp N8    &kp N9    &trans
-                &trans &trans &trans &trans &trans        &trans &kp N4    &kp N5    &kp N6    &trans
-                &trans &trans &trans &trans &trans        &trans &kp N1    &kp N2    &kp N3    &trans
-                                     &trans &trans        &trans &kp N0
+                &trans &trans &trans &trans &trans        &trans   &kp N7    &kp N8    &kp N9    &trans
+                &trans &trans &trans &trans &trans        &kp BSPC &kp N4    &kp N5    &kp N6    &trans
+                &trans &trans &trans &trans &trans        &trans   &kp N1    &kp N2    &kp N3    &trans
+                                     &trans &trans        &trans   &kp N0
                 >;
         };
 
