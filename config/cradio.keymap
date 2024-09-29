@@ -39,12 +39,6 @@
             bindings = <&caps_word>;
         };
 
-        combo_esc {
-            timeout-ms = <150>;
-            key-positions = <12 13 16 17>;
-            bindings = <&kp ESC>;
-        };
-
         // (
 
         combo_lpar {
@@ -137,6 +131,11 @@
             timeout-ms = <100>;
             key-positions = <9 19 29>;
             bindings = <&tog PLAY>;
+        };
+
+        esc_combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <32 33>;
         };
     };
 
