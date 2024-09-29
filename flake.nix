@@ -33,7 +33,7 @@
           shield = "urchin_%PART%";
 
           zephyrDepsHash =
-            "sha256-9QwsEJAoMrTp4gHgCsSsrAiDC1JN3brLSINIxKJKq08=";
+            "sha256-DXOQ+Hu8p1qeLiB1loRmKG9YOVbkJWMOrDI/aVA472M=";
 
           meta = {
             description = "ZMK firmware";
