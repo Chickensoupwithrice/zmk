@@ -122,7 +122,7 @@
 	combos {
 		compatible = "zmk,combos";
 		// both right thumb keys
-    combo_accent {
+    combo_esc {
 			timeout-ms = <200>;
 			key-positions = <32 33>;
 			bindings = <&kp ESC>;
@@ -134,14 +134,6 @@
 			key-positions = <30 31>;
 			bindings = <&mo SETTINGS>;
 		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
 	};
 
 	keymap {
@@ -152,7 +144,7 @@
 			bindings = <
 			&kp SQT         &kp COMMA       &kp DOT         &kp P       &kp Y                  &kp F &kp G  &kp C &kp R &kp L 
 			&hml LCTRL A    &hml LALT O     &hml LSHIFT E   &hml LGUI U &kp I                  &kp D &hmr RGUI H  &hmr RSHIFT T &hmr RALT N &hmr RCTRL S
-			&kp SCLN        &kp Q           &kp J           &kp K       &kp X                  &kp B &kp M  &kp W &kp V &kp Z
+			&hml LCTRL SCLN &kp Q           &kp J           &kp K       &kp X                  &kp B &kp M  &kp W &kp V &kp Z
                                               &lt NUM SPC  &lt SYM BSPC         &lt NAV TAB &lt FNC RET
 			>;
 		};
