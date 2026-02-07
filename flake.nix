@@ -8,17 +8,19 @@
     };
   };
 
-  outputs = { self, nixpkgs, zmk-nix }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      zmk-nix,
+    }:
     let
-      forAllSystems =
-        nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
-    in {
-      packages = forAllSystems (system: rec {
-        default = firmware;
-
-        firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-          name = "firmware";
-
+      forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
+    in
+    {
+      packages = forAllSystems (
+        system:
+        let
           src = nixpkgs.lib.sourceFilesBySuffices self [
             ".conf"
             ".keymap"
@@ -29,24 +31,45 @@
             ".defconfig"
           ];
 
-          board = "nice_nano_v2";
-          shield = "urchin_%PART%";
+          zephyrDepsHash = "sha256-DXOQ+Hu8p1qeLiB1loRmKG9YOVbkJWMOrDI/aVA472M=";
+        in
+        rec {
+          default = firmware;
 
-          zephyrDepsHash =
-            "sha256-DXOQ+Hu8p1qeLiB1loRmKG9YOVbkJWMOrDI/aVA472M=";
+          firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
+            inherit src zephyrDepsHash;
+            name = "firmware";
 
-          meta = {
-            description = "ZMK firmware";
-            license = nixpkgs.lib.licenses.mit;
-            platforms = nixpkgs.lib.platforms.all;
+            board = "nice_nano_v2";
+            shield = "urchin_%PART%";
+
+            meta = {
+              description = "ZMK firmware";
+              license = nixpkgs.lib.licenses.mit;
+              platforms = nixpkgs.lib.platforms.all;
+            };
           };
-        };
 
-        flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
-        update = zmk-nix.packages.${system}.update;
+          flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
+          update = zmk-nix.packages.${system}.update;
+
+          settings_reset = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
+            inherit src zephyrDepsHash;
+            inherit (firmware) westDeps;
+            name = "settings_reset";
+
+            board = "nice_nano_v2";
+            shield = "settings_reset";
+          };
+
+          flash_settings_reset = zmk-nix.packages.${system}.flash.override {
+            firmware = settings_reset;
+          };
+        }
+      );
+
+      devShells = forAllSystems (system: {
+        default = zmk-nix.devShells.${system}.default;
       });
-
-      devShells = forAllSystems
-        (system: { default = zmk-nix.devShells.${system}.default; });
     };
 }
